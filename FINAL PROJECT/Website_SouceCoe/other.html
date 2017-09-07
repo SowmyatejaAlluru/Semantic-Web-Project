@@ -1,0 +1,84 @@
+<!DOCTYPE html>    
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://mgskjaeveland.github.io/sgvizler/v/0.6/sgvizler.js"></script>
+    <script>
+      $(document).ready(
+          function (){ sgvizler.containerDrawAll(); }
+      );
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>New York State Unemployment Vs Violent </h1>
+</header>
+  
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="firearmrate.html">Firearmcount Vs Unemployment</a></li>
+    <li><a href="violentrate.html">Violentcount Vs Unemployment</a></li>
+    <li><a href="datasets.html">Datasets</a></li>
+    <li><a href="team.html">Team Information</a></li>     
+  </ul>
+</nav>
+
+<article>
+  <div>
+    <div class="row" style="margin-top: 30px;">
+      <h3> Introduction</h3>
+      <p>The goal is to check the statistics of unemployment, violence and firearem in New York state and see how the unemployment count effects the violence count and the firearm count. The datasets used for comparison are drawn for data.gov website.</p>
+    </div> 
+  </div>
+</article>
+
+<footer></footer>
+
+</div>
+
+</body>
+</html>

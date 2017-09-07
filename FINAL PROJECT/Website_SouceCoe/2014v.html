@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://mgskjaeveland.github.io/sgvizler/v/0.6/sgvizler.js"></script>
+    <script>
+      $(document).ready(
+          function (){ sgvizler.containerDrawAll(); }
+      );
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Violent Vs Unemployment</h1>
+</header>
+  
+<nav>
+  <ul>
+  <li><a href="index.html">Home</a></li>
+    <li><a href="violentrate.html">Violent Vs Unemployment</a></li>
+
+    <li><a href="2016v.html">2013</a></li>
+     <li><a href="2014v.html">2014</a></li>
+    <li><a href="2015v.html">2015</a></li>
+     </ul>
+</nav>
+
+<article>
+<h3>Violent Count Vs Unemployment Count </h3>
+    <h4>2014</h4>
+    <div id="example"
+         data-sgvizler-endpoint="http://localhost:3030/project/query"
+         data-sgvizler-query = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                                SELECT  ?county ((xsd:decimal(?violent_count)) AS ?Violent_Count) ((SUM((xsd:decimal(?unemployed)))/10) AS ?Unemployment_Count)
+                                WHERE { 
+                                GRAPH  <http://localhost:3030/project/data/violent> { 
+
+                                ?s1  <http://data.ny.gov/resource/_34dd-6g2j/county> ?county. 
+                                ?s1  <http://data.ny.gov/resource/_34dd-6g2j/violent_count> ?violent_count. 
+                                ?s1  <http://data.ny.gov/resource/_34dd-6g2j/year> &quot;2014&quot;. 
+                                } 
+
+                                GRAPH  <http://localhost:3030/project/data/unemployment> { 
+
+                                ?s2  <http://data.ny.gov/resource/_5hyu-bdh8/area> ?county2. 
+                                ?s2  <http://data.ny.gov/resource/_5hyu-bdh8/unemployed> ?unemployed. 
+                                ?s2  <http://data.ny.gov/resource/_5hyu-bdh8/year> &quot;2014&quot;. 
+                                FILTER regex(?county2, &quot;County&quot;, &quot;i&quot;)
+                                } 
+                                FILTER contains(?county2, ?county) 
+                                } 
+                                GROUP BY ?year ?county ?violent_count  "
+        
+         data-sgvizler-chart="google.visualization.LineChart"
+       
+         style="width:1000px; height:500px;"></div>
+         <h6>Unemployement Count is divided by 10 for visualization purpose</h6>
+ 
+
+  
+</div>
+</article>
+
+<footer></footer>
+
+</div>
+
+</body>
+</html>

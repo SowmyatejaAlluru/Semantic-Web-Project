@@ -1,0 +1,116 @@
+<!DOCTYPE html>    
+<html>
+  <head>
+  <style>
+    div.container {
+        width: 100%;
+        border: 1px solid gray;
+    }
+
+    header, footer {
+        padding: 1em;
+        color: white;
+        background-color: black;
+        clear: left;
+        text-align: center;
+    }
+
+    nav {
+        float: left;
+        width: 160px;
+        margin: 0;
+        padding: 1em;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+   
+    nav ul a {
+      text-decoration: none;
+    }
+
+    article {
+      margin-left: 170px;
+      border-left: 1px solid gray;
+      padding: 1em;
+      overflow: hidden;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="http://mgskjaeveland.github.io/sgvizler/v/0.6/sgvizler.js"></script>
+  <script>
+      $(document).ready(
+          function (){ sgvizler.containerDrawAll(); }
+      );
+  </script>
+</head>
+
+<body>
+
+  <div class="container">
+
+  <header>
+    <h1>Datasets Used</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="firearmrate.html">Firearmcount Vs Unemployment</a></li>
+      <li><a href="violentrate.html">Violentcount Vs Unemployment</a></li>
+      <li><a href="datasets.html">Datasets</a></li>
+      <li><a href="team.html">Team Information</a></li>     
+    </ul>
+  </nav>
+
+  <article>
+    <div class="row" style="margin-top: 30px;">
+      <table class="table table-bordered col-md-offset-1 col-md-10" style="width: 83.33333333%;">
+        <tbody>
+          <tr>
+            <th scope="row">Datasets</th>
+            <td>
+              <ul>
+                <li>Dataset 1 Local Area Unemployment Statistics: Beginning 1976 of New York State</li>
+                <li>Dataset 2 Index, Violent, Property, and Firearm Rates By County: Beginning 1990</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Datasets Link</th>
+            <td>
+              <ul>
+                <li>Dataset 1 <a href="https://catalog.data.gov/dataset/local-area-unemployment-statistics-beginning-1976">
+                https://catalog.data.gov/dataset/local-area-unemployment-statistics-beginning-1976</a>
+                </li>
+                <li>Dataset 2 <a href="https://catalog.data.gov/dataset/index-violent-property-and-firearm-rates-by-county-beginning-1990">
+                https://catalog.data.gov/dataset/index-violent-property-and-firearm-rates-by-county-beginning-1990</a>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">number of triples</th>
+            <td>
+              <ul>             
+                <li>Dataset-1 5000</li> 
+                <li>Dataset-2 6972</li>
+              </ul>
+            </td>
+          </tr>        
+        </tbody>
+      </table>
+    </div> 
+  </article>
+
+<footer></footer>
+
+</div>
+
+</body>
+</html>
